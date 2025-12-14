@@ -1,0 +1,42 @@
+/* ---------- Dual-tone Professional Background ---------- */
+
+body {
+    /* Base fallback color */
+    background-color: #FFF8F0; /* Soft cream base - 60% */
+
+    /* Background image gradient + overlay for dual-tone professional look */
+    background-image: 
+        linear-gradient(
+            135deg, 
+            rgba(255, 248, 240, 0.85) 60%,   /* cream 60% overlay */
+            rgba(47, 60, 126, 0.15) 30%      /* navy 30% subtle tone */
+        ),
+        url('{{ url_for('static', filename='img/bg.png') }}'); /* Optional subtle image */
+    
+    background-size: cover;        /* Full screen cover */
+    background-position: center;   /* Centered content */
+    background-repeat: no-repeat;  /* No tiling */
+    background-attachment: fixed;  /* Parallax feel */
+    color: #2F3C7E;                /* Default text color */
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* ---------- Optional overlay for readability ---------- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.25); /* Light overlay for readability */
+    z-index: -1;
+}
+
+/* ---------- Responsive adjustments ---------- */
+@media (max-width: 768px) {
+    body {
+        background-position: top center;
+        background-size: cover;
+    }
+}

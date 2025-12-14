@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About – AI Prompt Builder</title>
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+    /* ---------- COLOR SYSTEM ----------
+       Background (60%) : #FFF8F0
+       Structure/Text (30%) : #2F3C7E
+       Accent/Focus (10%) : #FF4D6D
+    ---------------------------------- */
+
+    body {
+        margin: 0;
+        padding: 40px 20px;
+        background: #FFF8F0; /* 60% */
+        font-family: Arial, sans-serif;
+        color: #2F3C7E; /* 30% */
+    }
+
+    main {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+        margin-bottom: 32px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        color: #2F3C7E;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        opacity: 0.85;
+    }
+
+    a {
+        color: #FF4D6D; /* 10% accent */
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* ---------- Card Sections ---------- */
+    .card {
+        background: #ffffff;
+        padding: 26px 28px;
+        border-radius: 14px;
+        border-left: 6px solid #FF4D6D; /* accent focus */
+        box-shadow: 0 8px 22px rgba(47,60,126,0.18);
+        margin-bottom: 28px;
+        line-height: 1.6;
+    }
+
+    .card h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        color: #2F3C7E;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    /* ---------- Highlight Text ---------- */
+    .highlight {
+        color: #FF4D6D;
+        font-weight: bold;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+        margin-top: 40px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(47,60,126,0.25);
+        font-size: 13px;
+        text-align: center;
+        opacity: 0.85;
+    }
+</style>
+</head>
+
+<body>
+
+<main>
+
+    <!-- ---------- Header ---------- -->
+    <header>
+        <h1>About AI Prompt Builder</h1>
+        <p class="subtitle">
+            A structured and intentional way to design high-quality AI prompts.
+        </p>
+        <p>
+            <a href="/">← Back to Prompt Builder</a>
+        </p>
+    </header>
+
+    <!-- ---------- Main Concept ---------- -->
+    <section class="card">
+        <h2>Main Concept</h2>
+        <p>
+            This application is built around a single idea:
+            <span class="highlight">clear questions create better AI results</span>.
+        </p>
+
+        <p>
+            Instead of writing a long, confusing prompt, users answer a sequence of
+            carefully selected questions. Each question removes ambiguity and adds intent.
+        </p>
+
+        <ul>
+            <li>Define the exact task for the AI</li>
+            <li>Provide meaningful background and context</li>
+            <li>Specify constraints or references</li>
+            <li>Describe quality expectations</li>
+            <li>Guide refinement and improvement</li>
+        </ul>
+    </section>
+
+    <!-- ---------- Motive ---------- -->
+    <section class="card">
+        <h2>Motive of the Application</h2>
+        <p>
+            The motive behind this project is to help users
+            <span class="highlight">think before generating</span>.
+        </p>
+
+        <p>
+            Many weak AI outputs are caused by unclear instructions.
+            This tool turns thinking into a structured process.
+        </p>
+
+        <ul>
+            <li>Ideal for students and beginners</li>
+            <li>Useful for developers and creators</li>
+            <li>Works across all major AI platforms</li>
+            <li>Improves output quality consistently</li>
+        </ul>
+    </section>
+
+    <!-- ---------- Project Vision ---------- -->
+    <section class="card">
+        <h2>Project Vision</h2>
+        <p>
+            This is a <span class="highlight">free and learning-focused project</span>,
+            designed with professional standards but without barriers.
+        </p>
+
+        <p>
+            The long-term vision is to evolve this tool into a complete
+            prompt-thinking assistant while keeping the experience simple and honest.
+        </p>
+
+        <ul>
+            <li>Minimal interface, maximum clarity</li>
+            <li>Consistent design across pages</li>
+            <li>Expandable for future features</li>
+            <li>Focused on real-world usability</li>
+        </ul>
+    </section>
+
+    <!-- ---------- Footer ---------- -->
+    <footer>
+        © 2025 AI Prompt Builder · Designed with clarity and intent
+    </footer>
+
+</main>
+
+</body>
+</html>

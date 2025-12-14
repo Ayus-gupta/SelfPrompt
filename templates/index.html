@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Yourself Prompt</title>
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+    /* ---------- Base ---------- */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #FFF8F0;
+        color: #2F3C7E;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ---------- Navigation ---------- */
+    header {
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(47,60,126,0.12);
+    }
+
+    nav {
+        max-width: 900px;
+        margin: auto;
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #2F3C7E;
+        font-weight: 600;
+        margin-left: 16px;
+    }
+
+    nav a:hover {
+        color: #FF4D6D;
+    }
+
+    /* ---------- Main Container ---------- */
+    main {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 60px 20px;
+    }
+
+    .container {
+        background: #ffffff;
+        width: 500px;
+        padding: 28px 32px;
+        border-radius: 14px;
+        border-left: 6px solid #FF4D6D;
+        box-shadow: 0 12px 28px rgba(47,60,126,0.18);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 24px;
+        letter-spacing: 0.3px;
+    }
+
+    /* ---------- Questions ---------- */
+    .question {
+        margin-bottom: 22px;
+        display: none;
+    }
+
+    .question.active {
+        display: block;
+    }
+
+    label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1.5px solid rgba(47,60,126,0.25);
+        font-size: 14px;
+        background: #FFF8F0;
+        transition: all 0.25s ease;
+    }
+footer {
+        margin-top: 40px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(47,60,126,0.25);
+        font-size: 13px;
+        text-align: center;
+        opacity: 0.85;
+    }
+    input:focus {
+        outline: none;
+        border-color: #FF4D6D;
+        box-shadow: 0 0 0 3px rgba(255,77,109,0.28);
+    }
+
+    /* ---------- Button ---------- */
+    .submit-btn {
+        display: none;
+        width: 100%;
+        padding: 14px;
+        background: #2F3C7E;
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 6px 16px rgba(47,60,126,0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 22px rgba(47,60,126,0.45);
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ---------- Header / Navigation ---------- -->
+<header>
+    <nav>
+        <strong>Yourself Prompt</strong>
+        <div>
+            <a href="/explain">About Questions</a>
+            <a href="/about">About</a>
+        </div>
+    </nav>
+</header>
+
+<!-- ---------- Main Content ---------- -->
+<main>
+    <div class="container">
+        <h1>Answer the Questions</h1>
+
+        <form method="POST" action="/generate">
+
+            <div class="question active">
+                <label>Q1: What task do you want the AI to perform?</label>
+                <input type="text" name="q1" oninput="showNext(0)">
+            </div>
+
+            <div class="question">
+                <label>Q2: What background/context should the AI know before generating the output?</label>
+                <input type="text" name="q2" oninput="showNext(1)">
+            </div>
+
+            <div class="question">
+                <label>Q3: What references, examples, or constraints should the AI consider?</label>
+                <input type="text" name="q3" oninput="showNext(2)">
+            </div>
+
+            <div class="question">
+                <label>Q4: How should the AI evaluate whether the output is good or not?</label>
+                <input type="text" name="q4" oninput="showNext(3)">
+            </div>
+
+            <div class="question">
+                <label>Q5: What improvements should the AI make if the first output is not perfect?</label>
+                <input type="text" name="q5" oninput="showNext(4)">
+            </div>
+
+            <button type="submit" class="submit-btn">Generate →</button>
+        </form>
+    </div>
+
+</main>
+    <footer>
+        © 2025 Yourself Prompt · Designed with clarity and intent
+    </footer>
+<!-- ---------- Script ---------- -->
+<script>
+    const questions = document.querySelectorAll('.question');
+    const submitBtn = document.querySelector('.submit-btn');
+
+    function showNext(index) {
+        const input = questions[index].querySelector('input');
+
+        if (input.value.trim() !== "") {
+            if (questions[index + 1]) {
+                questions[index + 1].classList.add('active');
+            } else {
+                submitBtn.style.display = 'block';
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

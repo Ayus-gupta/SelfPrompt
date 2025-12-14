@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prompt Builder – Question Guide</title>
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+    /* COLOR SYSTEM
+       Background 60% : #FFF8F0
+       Structure 30%  : #2F3C7E
+       Accent 10%     : #FF4D6D
+    */
+
+    body {
+        margin: 0;
+        padding: 40px 20px;
+        background: #FFF8F0;
+        font-family: Arial, sans-serif;
+        color: #2F3C7E;
+    }
+
+    main {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    /* ---------- Header ---------- */
+    h1 {
+        margin-bottom: 8px;
+        color: #2F3C7E;
+    }
+
+    .intro {
+        margin-bottom: 24px;
+        font-size: 15px;
+        opacity: 0.9;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid rgba(47,60,126,0.25);
+        margin: 28px 0;
+    }
+
+    /* ---------- Question Box ---------- */
+    .question-box {
+        background: #ffffff;
+        padding: 26px 28px;
+        border-radius: 14px;
+        border-left: 6px solid #FF4D6D;
+        box-shadow: 0 8px 22px rgba(47,60,126,0.18);
+        margin-bottom: 26px;
+        line-height: 1.6;
+    }
+
+    .question-box h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #2F3C7E;
+        font-size: 18px;
+    }
+
+    .question-box p {
+        margin-bottom: 14px;
+    }
+
+    /* ---------- Example ---------- */
+    .example {
+        background: #FFF8F0;
+        padding: 14px 16px;
+        border-radius: 10px;
+        border: 1.5px dashed rgba(47,60,126,0.3);
+        font-size: 14px;
+    }
+
+    .example strong {
+        color: #FF4D6D;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+        margin-top: 40px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(47,60,126,0.25);
+        font-size: 13px;
+        text-align: center;
+        opacity: 0.85;
+    }
+
+    a {
+        color: #FF4D6D;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+
+<body>
+
+<main>
+
+    <!-- Header -->
+    <h1>Prompt Builder – Question Guide</h1>
+    <p class="intro">
+        This page explains each question in detail so users understand how to answer
+        effectively and generate high-quality AI prompts.
+    </p>
+
+    <hr>
+
+    <!-- Q1 -->
+    <div class="question-box">
+        <h2>Q1. What task do you want the AI to perform?</h2>
+        <p>
+            <strong>Explanation:</strong><br>
+            This defines the main goal of the prompt.
+            The AI needs a clear and direct task so it knows exactly what you want.
+        </p>
+        <div class="example">
+            <strong>Example Answer:</strong><br>
+            Write a 200-word summary of a research paper.
+        </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-box">
+        <h2>Q2. What background/context should the AI know before generating the output?</h2>
+        <p>
+            <strong>Explanation:</strong><br>
+            Context helps the AI understand the situation, purpose, audience, and style.
+            More context usually results in better accuracy.
+        </p>
+        <div class="example">
+            <strong>Example Answer:</strong><br>
+            The summary is for college students who are new to machine learning.
+        </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-box">
+        <h2>Q3. What references, examples, or constraints should the AI consider?</h2>
+        <p>
+            <strong>Explanation:</strong><br>
+            References guide tone and structure.
+            Constraints define limits such as length, format, or style.
+        </p>
+        <div class="example">
+            <strong>Example Answer:</strong><br>
+            Use simple language. Mention only three key insights. Avoid equations.
+        </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-box">
+        <h2>Q4. How should the AI evaluate whether the output is good or not?</h2>
+        <p>
+            <strong>Explanation:</strong><br>
+            This tells the AI what quality means for your task.
+            It helps the AI self-check before finalizing the response.
+        </p>
+        <div class="example">
+            <strong>Example Answer:</strong><br>
+            The output is good if it is clear, accurate, and easy to read.
+        </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question-box">
+        <h2>Q5. What improvements should the AI make if the first output is not perfect?</h2>
+        <p>
+            <strong>Explanation:</strong><br>
+            This guides the AI on how to refine its response.
+            It ensures the second attempt is better than the first.
+        </p>
+        <div class="example">
+            <strong>Example Answer:</strong><br>
+            Improve the flow, shorten long sentences, and add bullet points if needed.
+        </div>
+    </div>
+
+    <footer>
+        © 2025 AI Prompt Builder · Clear Questions → Better AI Results
+    </footer>
+
+</main>
+
+</body>
+</html>
